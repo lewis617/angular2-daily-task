@@ -20,12 +20,11 @@
         <li routerLinkActive="active" *ngIf="!authService.user">
           <a routerLink="login">登录</a>
         </li>
-        <li class="dropdown" *ngIf="authService.user">
-          <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"
-             (click)="logoutIsCollapsed=!logoutIsCollapsed">
+        <li class="dropdown" *ngIf="authService.user" dropdown>
+          <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle>
             {{authService.user.name}} <span class="caret"></span>
           </a>
-          <ul class="dropdown-menu" [collapse]="logoutIsCollapsed">
+          <ul class="dropdown-menu"  dropdownMenu>
             <li><a role="button" (click)="logout()">登出</a></li>
           </ul>
         </li>

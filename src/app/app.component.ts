@@ -9,15 +9,12 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
   isCollapsed: boolean = true;
-  logoutIsCollapsed: boolean = true;
 
   constructor(private authService: AuthService, private router: Router) {
   }
 
   logout() {
     this.authService.logout();
-    this.isCollapsed = true;
-    this.logoutIsCollapsed = true;
     this.router.navigate([''])
   }
 }

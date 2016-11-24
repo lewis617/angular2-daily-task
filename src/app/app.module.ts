@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CollapseModule } from 'ng2-bootstrap/components/collapse';
+import { DropdownModule } from 'ng2-bootstrap/components/dropdown';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -28,6 +29,7 @@ import { ApiData }     from './api-data';
     FormsModule,
     HttpModule,
     CollapseModule,
+    DropdownModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'login', component: LoginComponent},
