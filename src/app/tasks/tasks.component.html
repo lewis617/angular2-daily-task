@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="form-inline row">
+    <div class="form-group col-md-3">
+      <label for="key-world">筛选：</label>
+      <input name="keyWord" type="text" class="form-control" id="key-world" placeholder="请输入关键字"
+             [(ngModel)]="filters.keyWord" (ngModelChange)="filterAndSort()">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="date">日期：</label>
+      <input name="date" type="date" class="form-control" id="date"
+             [(ngModel)]="filters.date" (ngModelChange)="filterAndSort()">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="content">添加任务：</label>
+      <input #keyWord name="keyWord" type="text" class="form-control" id="content" placeholder="请输入任务内容">
+    </div>
+    <div class="form-group col-md-3">
+      <button class="btn btn-success" type="button" (click)="addTask(keyWord.value)">添加</button>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <!-- 任务列表-->
+  <div style="overflow: auto">
+    <table class="table table-hover table-striped table-condensed">
+      <thead>
+        <tr class="bg-primary" align="right">
+          <th width="10"></th>
+          <th width="100">人员</th>
+          <th width="100">内容</th>
+          <th width="100">日期</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of filteredTasks">
+          <td></td>
+          <td>{{task.user}}</td>
+          <td>{{task.content}}</td>
+          <td>{{task.date | date:"yyyy-MM-dd"}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+</div>

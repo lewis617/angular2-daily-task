@@ -1,0 +1,12 @@
+<div class="loginPage container">
+  <h2>登录</h2>
+  <form class="form-inline" (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="请输入用户名" [(ngModel)]="name" name="name" required/>
+    </div>
+    <button type="submit" class="btn btn-success">登录</button>
+  </form>
+  <p>
+    此操作将输入的用户名传进authService这个服务的实例化对象中。
+  </p>
+</div> <!-- /container -->
